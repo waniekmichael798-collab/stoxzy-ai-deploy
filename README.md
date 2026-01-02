@@ -1,3 +1,14 @@
+---
+title: Stoxzy Ai
+emoji: 📊
+colorFrom: green
+colorTo: blue
+sdk: streamlit
+sdk_version: 1.29.0
+app_file: app.py
+pinned: false
+---
+
 # 📊 Stoxzy.ai — Value Investing, Simplified
 
 Stoxzy.ai is a production-ready stock analysis web application built with Python and Streamlit. It uses real-time financial data to calculate intrinsic values and provide a comprehensive investment score.
