@@ -1,0 +1,12 @@
+.git
+.gitignore
+__pycache__
+*.pyc
+*.log
+.venv
+venv
+.streamlit/config.toml
+Procfile
+runtime.txt
+README.md
+test_logic.py

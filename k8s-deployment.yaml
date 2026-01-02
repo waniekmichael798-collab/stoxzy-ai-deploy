@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stoxzy-deployment
+  labels:
+    app: stoxzy
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: stoxzy
+  template:
+    metadata:
+      labels:
+        app: stoxzy
+    spec:
+      containers:
+      - name: stoxzy-app
+        image: your-dockerhub-username/stoxzy-ai:latest # REPLACE THIS WITH YOUR IMAGE
+        ports:
+        - containerPort: 8501
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8501
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8501
+          initialDelaySeconds: 15
+          periodSeconds: 5

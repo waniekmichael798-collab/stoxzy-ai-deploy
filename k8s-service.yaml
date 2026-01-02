@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: stoxzy-service
+spec:
+  selector:
+    app: stoxzy
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8501
+  type: LoadBalancer # Use LoadBalancer for cloud providers, or NodePort for local/on-prem
